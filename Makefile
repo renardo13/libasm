@@ -9,7 +9,10 @@ AR = ar
 AR_FLAGS = rcs
 
 
-SRC = ft_strlen.asm
+SRC = ft_strlen.asm \
+	ft_strcpy.asm \
+	ft_strcmp.asm
+	
 OBJ = $(SRC:.asm=.o)
 LIB = libasm.a
 EXEC = a.out
