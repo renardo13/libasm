@@ -61,12 +61,12 @@ Return value with "ret" :
 
 When you return a value from an asm function with ret, the register that the caller reads the value from depends on the function’s prototype :
 
-| Type C   | Register read | Value read                   |
-| -------- | ------------- | ---------------------------- |
-| `char`   | `al`          | 42                           |
-| `short`  | `ax`          | 42                           |
-| `int`    | `eax`         | 42                           |
-| `long`   | `rax`         | 42                           |
+| C Type read  | Register used | Portion of `rax` accessed             |
+|--------------|---------------|---------------------------------------|
+| char         | al (8 bits)   | Lowest 8 bits                         |
+| short        | ax (16 bits)  | Lowest 16 bits                        |
+| int          | eax (32 bits) | Lowest 32 bits (upper half set to 0)  |
+| long         | rax (64 bits) | All 64 bits                           |
 
 ## SYSTEM CALLS
 
