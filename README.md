@@ -36,7 +36,7 @@ Argument passed throught ASM functions calls (in C or other hight levels languag
 | 7+              | Stack    | Additional arguments are passed on the stack |
 
 
-## FLAG
+## CONDITION
 
 | Instruction | Signification                   |
 | ----------- | ------------------------------- |
