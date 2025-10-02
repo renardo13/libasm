@@ -47,12 +47,13 @@ For conditions, `Z`ero `F`lag is checked (ZF).
 | SF   | Sign Flag (result negative)    |
 | OF   | Overflow Flag (signed overflow)|
 
+
 | Instruction | Signification                   |
 | ----------- | ------------------------------- |
-| jne         | `J`ump if `N`ot `E`qual (ZF = 0)|
-| je          | `J`ump if `E`qual (ZF = 1)      |
-| jnz         | `J`ump if `N`ot `Z`ero (ZF = 0) |
-| jz          | `J`ump if `Z`ero (ZF = 1)       |
+| jne         | `J`ump IF `N`ot `E`qual (ZF = 0)|
+| je          | `J`ump IF `E`qual (ZF = 1)      |
+| jnz         | `J`ump IF `N`ot `Z`ero (ZF = 0) |
+| jz          | `J`ump IF `Z`ero (ZF = 1)       |
 
 ### RETURN
 
