@@ -13,12 +13,25 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 
 ## REGISTER
 
-| Register | Size    | Notes                                             |
-| -------- | ------- | ------------------------------------------------- |
-| al       | 8 bits  | Lowest byte of rax                                |
-| ah       | 8 bits  | Second byte of rax (high byte of the 16-bit word) |
-| ax       | 16 bits | Lowest 16 bits of rax (al + ah)                   |
-| eax      | 32 bits | Lowest 32 bits of rax                             |
-| rax      | 64 bits | Full 64-bit register                              |
+### Return value with "ret"
 
+| Registre | Taille  | Hex content        | Decimal content |
+| -------- | ------- | ------------------ | --------------- |
+| `rax`    | 64 bits | 0x000000000000002A | 42              |
+| `eax`    | 32 bits | 0x0000002A         | 42              |
+| `ax`     | 16 bits | 0x002A             | 42              |
+| `al`     | 8 bits  | 0x2A               | 42              |
+| `ah`     | 8 bits  | 0x00               | 0               |
+
+### Interpretation of this register in C
+
+When you return a value from an asm function with ret, the register that the caller reads the value from depends on the function’s prototype :
+
+| Type C   | Registre lu | Valeur lue                   |
+| -------- | ----------- | ---------------------------- |
+| `char`   | `al`        | 42                           |
+| `short`  | `ax`        | 42                           |
+| `int`    | `eax`       | 42                           |
+| `long`   | `rax`       | 42                           |
+| `double` | `xmm0`      | ❌ indéterminé (pas dans rax) |
 
