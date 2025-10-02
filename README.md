@@ -7,6 +7,7 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 ## REGISTER
 
 Registers are ultra-fast storage locations inside the ```CPU```. They are not part of the ```stack``` or the ```heap```.
+```Stack``` and ```heap``` are found in the ```RAM```.
 
 ## Aside
 
