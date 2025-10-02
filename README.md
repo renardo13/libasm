@@ -55,3 +55,30 @@ When you return a value from an asm function with ret, the register that the cal
 | `int`    | `eax`         | 42                           |
 | `long`   | `rax`         | 42                           |
 
+## SYSTEM CALLS
+
+A ```syscall``` is juste a call to a function that we can not performed directly without some checks. We cannot write directly in memory etc...
+
+-> Programs cannot touch hardware, open files, or allocate heap memory arbitrarily.
+-> Syscalls are the controlled interface to do those things safely.
+-> The kernel does permissions, validation, and buffering before performing the action.
+
+User Program
+     |
+     v
+syscall write(fd, buf, count)
+     |
+     v
+Kernel:
+  1️⃣ Check file descriptor and permissions
+  2️⃣ Validate buffer pointer and size
+  3️⃣ Copy data from user buffer to kernel buffer
+  4️⃣ Call device driver to perform the write
+     |
+     v
+Return to user program:
+rax = number of bytes written, or -1 if error
+
+
+
+
