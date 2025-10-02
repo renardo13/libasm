@@ -38,6 +38,15 @@ Argument passed throught ASM functions calls (in C or other hight levels languag
 
 ## CONDITION
 
+For conditions, `Z`ero `F`lag is checked (ZF).
+
+| Flag | Meaning                        |
+|------|--------------------------------|
+| ZF   | Zero Flag (result = 0)         |
+| CF   | Carry Flag (unsigned overflow) |
+| SF   | Sign Flag (result negative)    |
+| OF   | Overflow Flag (signed overflow)|
+
 | Instruction | Signification                   |
 | ----------- | ------------------------------- |
 | jne         | `J`ump if `N`ot `E`qual (ZF = 0)|
