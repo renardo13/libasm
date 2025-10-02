@@ -95,4 +95,4 @@ A ```syscall``` is juste a call to a function that we can not performed directly
 | Return to User   | `rax` = number of bytes written, or -1 if error |
 
 
-
+1️⃣ cat /usr/include/x86_64-linux-gnu/asm/unistd_64.h to see the code associated with syscall
