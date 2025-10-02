@@ -4,6 +4,25 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 
 ## Mini tutorial
 
+## REGISTER
+
+Registers are ultra-fast storage locations inside the ```CPU```. They are not part of the ```stack``` or the ```heap```.
+
+## ARGUMENTS
+
+Argument passed throught functions calls :
+
+| Argument number | Register | Notes                                        |
+| --------------- | -------- | -------------------------------------------- |
+| 1               | `rdi`    | First argument                               |
+| 2               | `rsi`    | Second argument                              |
+| 3               | `rdx`    | Third argument                               |
+| 4               | `rcx`    | Fourth argument                              |
+| 5               | `r8`     | Fifth argument                               |
+| 6               | `r9`     | Sixth argument                               |
+| 7+              | Stack    | Additional arguments are passed on the stack |
+
+
 ## FLAG
 
 | Instruction | Signification                   |
@@ -13,9 +32,9 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 | jnz         | `J`ump if `N`ot `Z`ero (ZF = 0) |
 | jz          | `J`ump if `Z`ero (ZF = 1)       |
 
-## REGISTER
+### RETURN
 
-### Return value with "ret"
+Return value with "ret" :
 
 | Registre | Taille  | Hex content        | Decimal content |
 | -------- | ------- | ------------------ | --------------- |
@@ -25,7 +44,7 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 | `al`     | 8 bits  | 0x2A               | 42              |
 | `ah`     | 8 bits  | 0x00               | 0               |
 
-### Interpretation of this register in C
+### Interpretation of this return value in C
 
 When you return a value from an asm function with ret, the register that the caller reads the value from depends on the function’s prototype :
 
