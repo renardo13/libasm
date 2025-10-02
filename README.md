@@ -10,7 +10,7 @@ Registers are ultra-fast storage locations inside the ```CPU```. They are not pa
 
 ## ARGUMENTS
 
-Argument passed throught functions calls :
+Argument passed throught ASM functions calls (in C or other hight levels languages) :
 
 | Argument number | Register | Notes                                        |
 | --------------- | -------- | -------------------------------------------- |
