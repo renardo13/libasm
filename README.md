@@ -8,8 +8,20 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 
 Registers are ultra-fast storage locations inside the ```CPU```. They are not part of the ```stack``` or the ```heap```.
 
+## Aside
+
+| Criterion         | Stack                   | Heap                        |
+| ----------------- | ----------------------- | --------------------------- |
+| Speed             | Very fast               | Slower                      |
+| Memory management | Automatic (LIFO)        | Manual or garbage collected |
+| Size              | Small                   | Large                       |
+| Allocation        | Known at compile time   | During program execution    |               
+| Lifetime          | Limited to the function | Controlled by the program   |
+
+
 ## ARGUMENTS
 
+Argument are ```pointers``` toward the value in reality.
 Argument passed throught ASM functions calls (in C or other hight levels languages) :
 
 | Argument number | Register | Notes                                        |
