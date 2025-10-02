@@ -27,11 +27,10 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 
 When you return a value from an asm function with ret, the register that the caller reads the value from depends on the function’s prototype :
 
-| Type C   | Registre lu | Valeur lue                   |
-| -------- | ----------- | ---------------------------- |
-| `char`   | `al`        | 42                           |
-| `short`  | `ax`        | 42                           |
-| `int`    | `eax`       | 42                           |
-| `long`   | `rax`       | 42                           |
-| `double` | `xmm0`      | ❌ indéterminé (pas dans rax) |
+| Type C   | Register read | Value read                   |
+| -------- | ------------- | ---------------------------- |
+| `char`   | `al`          | 42                           |
+| `short`  | `ax`          | 42                           |
+| `int`    | `eax`         | 42                           |
+| `long`   | `rax`         | 42                           |
 
