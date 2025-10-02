@@ -10,13 +10,13 @@ Registers are ultra-fast storage locations inside the ```CPU```. They are not pa
 
 ## Aside
 
-| Criterion         | Stack                   | Heap                        |
-| ----------------- | ----------------------- | --------------------------- |
-| Speed             | Very fast               | Slower                      |
-| Memory management | Automatic (LIFO)        | Manual or garbage collected |
-| Size              | Small                   | Large                       |
-| Allocation        | Known at compile time   | During program execution    |               
-| Lifetime          | Limited to the function | Controlled by the program   |
+| Criterion          | Stack                       | Heap                          | CPU Registers                                  |
+|--------------------|-----------------------------|-------------------------------|------------------------------------------------|
+| Speed              | Very fast                   | Slower                        | Ultra-fast (faster than stack)                 |
+| Memory management  | Automatic (LIFO)            | Manual or garbage collected   | Fully managed by CPU hardware                  |
+| Size               | Small                       | Large                         | Extremely small (dozens to hundreds of bytes)  |
+| Allocation         | Known at compile time       | During program execution      | Fixed by CPU architecture (not user-controlled)|
+| Lifetime           | Limited to the function     | Controlled by the program     | Lives only while the CPU executes instructions |
 
 
 ## ARGUMENTS
