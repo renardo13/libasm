@@ -6,12 +6,12 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 
 ## FLAG
 
-| Instruction | Signification              |
-| ----------- | -------------------------- |
-| jne         | Jump if Not Equal (ZF = 0) |
-| je          | Jump if Equal (ZF = 1)     |
-| jnz         | Jump if Not Zero (ZF = 0)  |
-| jz          | Jump if Zero (ZF = 1)      |
+| Instruction | Signification                   |
+| ----------- | ------------------------------- |
+| jne         | `J`ump if `N`ot `E`qual (ZF = 0)|
+| je          | `J`ump if `E`qual (ZF = 1)      |
+| jnz         | `J`ump if `N`ot `Z`ero (ZF = 0) |
+| jz          | `J`ump if `Z`ero (ZF = 1)       |
 
 ## REGISTER
 
