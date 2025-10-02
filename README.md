@@ -48,12 +48,15 @@ For conditions, `Z`ero `F`lag is checked (ZF).
 | OF   | Overflow Flag (signed overflow)|
 
 
-| Instruction | Signification                   |
-| ----------- | ------------------------------- |
-| jne         | `J`ump IF `N`ot `E`qual (ZF = 0)|
-| je          | `J`ump IF `E`qual (ZF = 1)      |
-| jnz         | `J`ump IF `N`ot `Z`ero (ZF = 0) |
-| jz          | `J`ump IF `Z`ero (ZF = 1)       |
+| Jump | Flag checked | Condition                     |
+|------|--------------|-------------------------------|
+| je   | ZF           | Jump if equal (zero)          |
+| jne  | ZF           | Jump if not equal             |
+| jl   | SF, OF       | Jump if less (signed)         |
+| jg   | ZF, SF, OF   | Jump if greater (signed)      |
+| jz   | ZF           | Jump if zero (same as je)     |
+| jnz  | ZF           | Jump if not zero (same as jne)|
+
 
 ### RETURN
 
