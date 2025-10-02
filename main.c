@@ -7,15 +7,20 @@ extern int ft_strcmp(const char *s1, const char*s2);
 
 int main()
 {
-    char *s = "ertretrethello";
+    char *s = "hello";
 
     printf("return of strlen = %ld\n", ft_strlen(s));
+
+    /* ----------------------------------------------------------------- */
     
-    char dest[6];
+    char dest[1024];
     
     printf("return of strcpy = %s\n", ft_strcpy(dest, s));
 
-    char *s2 = "dethello";
+
+    /* ----------------------------------------------------------------- */
+
+    char *s2 = "hellop";
     // char *d3 = "coucou";
 
     if(ft_strcmp(s, s2) == 0)
@@ -23,7 +28,11 @@ int main()
     else
         printf("The two strings are differents\n");
 
-    printf("return of strlen = %d\n", ft_strcmp(s, s2));
 
+        
+        printf("return of strcmp = %d\n", ft_strcmp(s, s2));
+        
+        
+    /* ----------------------------------------------------------------- */
 
 }
