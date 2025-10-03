@@ -1,18 +1,16 @@
 section .text
+global ft_read
 
-global ft_write
 extern __errno_location
 
-ft_write:
-
-    mov rax, 1                     ; Set the syscall call number for write (1)
+ft_read:
+    mov rax, 0
     syscall
-    cmp		rax, 0                 ; If 0 syscall was successfull
+    cmp		rax, 0
     jl .error
-    ret                            ; If rax is less than zero return error else return rax
+    ret
 
 .error:
-    
     neg rax                        ; convert -1, -2, etc. to positive number
     mov rdi, rax
     call		__errno_location   ; __errno_location function return a POINTER to errno -> we did that only to

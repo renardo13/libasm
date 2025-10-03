@@ -1,44 +1,24 @@
-# compile
+NAME = libasm.a
 ASM = nasm
-ASM_FLAGS = -f elf64
-
-# archive to use as a library
-AR = ar
-AR_FLAGS = rcs
-
-SRC = ft_strlen.asm \
-	ft_strcpy.asm \
-	ft_strcmp.asm \
-	
-	
+ASMFLAGS = -felf64
+SRC = ft_strlen.asm ft_strcpy.asm ft_strcmp.asm ft_write.asm ft_read.asm
 OBJ = $(SRC:.asm=.o)
-LIB = libasm.a
-EXEC = a.out
 
-# Default target
-all: $(OBJ) $(LIB) $(EXEC)
+all: $(NAME) main
 
-# Assemble ASM files to object files
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+
 %.o: %.asm
-	$(ASM) $(ASM_FLAGS) $< -o $@
+	$(ASM) $(ASMFLAGS) $< -o $@
 
-# Create static library from object files
-$(LIB): $(OBJ)
-	$(AR) $(AR_FLAGS) $(LIB) $(OBJ)
+main: main.c $(NAME)
+	cc main.c $(NAME) -o a.out
 
-# Compile main.c and link with the static library
-$(EXEC): main.c $(LIB)
-	gcc main.c -L. -lasm -fPIE -o $(EXEC)
-
-# Clean up object files
 clean:
 	rm -f $(OBJ)
 
-# Clean everything including library
 fclean: clean
-	rm -f $(LIB) $(EXEC)
+	rm -f $(NAME) a.out
 
-# Rebuild everything
 re: fclean all
-
-.PHONY: all clean fclean re

@@ -10,21 +10,24 @@ extern long ft_strlen(const char *s);
 extern char* ft_strcpy(const char *dest, const char*src);
 extern int ft_strcmp(const char *s1, const char*s2);
 extern ssize_t ft_write(int fd, const void *msg, size_t len);
+extern ssize_t	ft_read(int fd, void *buf, size_t count);
 
 int main()
 {
+    /* -------------------------------STRLEN---------------------------------- */
+
     char *s = "hello";
 
     printf("return of strlen = %ld\n", ft_strlen(s));
 
-    /* ----------------------------------------------------------------- */
+    /* -------------------------------STRCPY---------------------------------- */
     
     char dest[1024];
     
     printf("return of strcpy = %s\n", ft_strcpy(dest, s));
 
 
-    /* ----------------------------------------------------------------- */
+    /* -----------------------------STRCMP------------------------------------ */
 
     char *s2 = "Salut ca va ?";
     // char *d3 = "coucou";
@@ -36,20 +39,37 @@ int main()
         printf("return of strcmp = %d\n", ft_strcmp(s, s2));
         
         
+    /* --------------------------WRITE--------------------------------------- */
+
+    ssize_t ret;
+
+    ret = ft_write(1, s2, ft_strlen(s2));
+
+    printf("\nretour de write %zd\n", ret);
+
+    if (ret == -1) {
+        // errno contient le code d'erreur positif
+        printf("Write failed! errno = %d (%s)\n", errno, strerror(errno));
+    } else {
+        printf("Write succeeded, wrote %zd bytes\n", ret);
+    }
+
+    /* -------------------------READ---------------------------------------- */
+
+    char buf[1024];
+
+    ret = ft_read(0, &buf, 1024);
+
+    printf("\nretour de read %zd\n", ret);
+
+    if (ret == -1) {
+        // errno contient le code d'erreur positif
+        printf("Read failed! errno = %d (%s)\n", errno, strerror(errno));
+    } else {
+        printf("Read succeeded, wrote %zd bytes\n", ret);
+    }
+
     /* ----------------------------------------------------------------- */
 
-    // ssize_t ret;
-
-    // ret = ft_write(12, s2, ft_strlen(s2));
-
-    // printf("\nretour de write %zd\n", ret);
-
-    // if (ret == -1) {
-    //     // errno contient le code d'erreur positif
-    //     printf("Write failed! errno = %d (%s)\n", errno, strerror(errno));
-    // } else {
-    //     printf("Write succeeded, wrote %zd bytes\n", ret);
-    // }
-
-
+    
 }
