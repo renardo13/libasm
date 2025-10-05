@@ -11,12 +11,13 @@ extern char* ft_strcpy(const char *dest, const char*src);
 extern int ft_strcmp(const char *s1, const char*s2);
 extern ssize_t ft_write(int fd, const void *msg, size_t len);
 extern ssize_t	ft_read(int fd, void *buf, size_t count);
+extern char *ft_strdup(const char *s);
 
 int main()
 {
     /* -------------------------------STRLEN---------------------------------- */
 
-    char *s = "hello";
+    char *s = "coucou ca va ? :)";
 
     printf("return of strlen = %ld\n", ft_strlen(s));
 
@@ -71,5 +72,6 @@ int main()
 
     /* ----------------------------------------------------------------- */
 
+    printf("retour de strdup = %s\n", ft_strdup(s));
     
 }

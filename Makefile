@@ -1,19 +1,20 @@
 NAME = libasm.a
 ASM = nasm
 ASMFLAGS = -felf64
-SRC = ft_strlen.asm ft_strcpy.asm ft_strcmp.asm ft_write.asm ft_read.asm
-OBJ = $(SRC:.asm=.o)
+SRC = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
+OBJ = $(SRC:.s=.o)
 
-all: $(NAME) main
+all: $(NAME) exec
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.asm
+%.o: %.s
 	$(ASM) $(ASMFLAGS) $< -o $@
 
-main: main.c $(NAME)
-	cc main.c $(NAME) -o a.out
+
+exec: main.c $(NAME)
+	$(CC) $(CFLAGS) main.c $(NAME) -o a.out
 
 clean:
 	rm -f $(OBJ)

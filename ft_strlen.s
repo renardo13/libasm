@@ -11,7 +11,7 @@ ft_strlen:
 .loop_start:
     cmp byte[rdi + rax], 0
 
-    ; To make a jump to continue to loop like a while;
+    ; To make a jump to continue to loop like a while
     je .loop_end
     inc rax
     jmp .loop_start
