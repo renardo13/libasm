@@ -25,6 +25,6 @@ ft_strdup:
     ret
 
 .error:
-    xor     rax, rax        ; return NULL
+    xor     rax, rax    ; return NULL
     
     ret

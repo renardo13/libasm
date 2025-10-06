@@ -1,17 +1,4 @@
-#include <errno.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-/* To have access to the ASM library */
-extern long ft_strlen(const char *s);
-extern char* ft_strcpy(const char *dest, const char*src);
-extern int ft_strcmp(const char *s1, const char*s2);
-extern ssize_t ft_write(int fd, const void *msg, size_t len);
-extern ssize_t	ft_read(int fd, void *buf, size_t count);
-extern char *ft_strdup(const char *s);
+#include "includes/libasm.h"
 
 int main()
 {
@@ -37,7 +24,7 @@ int main()
         printf("The two strings are the same\n");
     else
         printf("The two strings are differents\n");
-        printf("return of strcmp = %d\n", ft_strcmp(s, s2));
+    printf("return of strcmp = %d\n", ft_strcmp(s, s2));
         
         
     /* --------------------------WRITE--------------------------------------- */
