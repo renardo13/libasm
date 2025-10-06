@@ -10,7 +10,7 @@ Registers are ultra-fast storage locations inside the ```CPU```. They are not pa
 ```Stack``` and ```heap``` are found in the ```RAM```.
 
 The stack is used in assembly for instance with `push` and `pop`. This is automatic memory management (LIFO) -> the order is ***last in first out***.
-When you do `pop` you take the value inside the register, you make a copy and you put it on the top of the ***stack***.
+When you do `pop` you take the value inside the register, you make a copy and you put it on the top of the ***stack***. \
 ```push rax``` -> put the value of rax on the stack \
 ```pop rdx``` -> take this value and put it in rdx
 
