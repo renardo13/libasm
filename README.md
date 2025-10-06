@@ -9,6 +9,11 @@ This librairy provide Character utilities, memory management, I/O helpers, Strin
 Registers are ultra-fast storage locations inside the ```CPU```. They are not part of the ```stack``` or the ```heap```.
 ```Stack``` and ```heap``` are found in the ```RAM```.
 
+The stack is used in assembly for instance with `push` and `pop`. This is automatic memory management (LIFO) -> the order is ***last in first out***.
+When you do `pop` you take the value inside the register, you make a copy and you put it on the top of the ***stack***. \
+```push rax``` -> put the value of rax on the stack \
+```pop rdx``` -> take this value and put it in rdx
+
 ## Aside
 
 | Criterion          | Stack                       | Heap                          | CPU Registers                                  |
@@ -99,3 +104,4 @@ A ```syscall``` is juste a call to a function that we can not performed directly
 
 
 1️⃣ cat /usr/include/x86_64-linux-gnu/asm/unistd_64.h to see the code associated with syscall
+You have to put the right code in `rax` and make a syscall.
